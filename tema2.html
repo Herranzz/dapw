@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Fuente encabezado-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!--Fuente botones-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"> 
+    
+    <title>DAWP</title>
+  </head>
+  <body>
+    <link href='CSS/style.css' rel='stylesheet' type='text/css'>
+
+    <div id="message" align="center"><button><a href="index.html">Inicio</a></button><strong>Tema-2-Servidores de Ficheros</strong></div>
+     
+    <div class="ima">
+      <img id="logo" src="./media/wiki.jpg" alt="wiki">
+    </div>
+
+    <div class="container">
+
+      <div class="menu">
+        <ul>
+            <a href="tema1.html" class="tema"><li>Tema-1-Arquitectura Web</li></a><br>
+            <a href="tema2.html" class="tema"><li>Tema-2-Servidores de Ficheros</li></a><br>
+
+            <ul>
+              <a href="#servif"><li>Servidor FTP</li></a><br>
+              <a href="#ftp"><li>FTP</li></a><br>
+            </ul>
+
+            <a href="tema3.html" class="tema"><li>Tema-3-Herramientas colaborativas y Metodologías ágiles</li></a><br>
+            <a href="tema4.html" class="tema"><li>Tema-4-Documentación, pruebas y control de versiones</li></a>
+        </ul>
+    </div>
+
+        <div id="all" class="caja">
+            <h1 id="servif"><u>Servidor FTP</u></h1>
+            <p>Servicio orientado a conexion, se creo en las decada de los 70, utiliza los puerto 20 y 21 por defecto sobre tcp, el 20 para datos y 21 para control.
+              nos permite realizar intercambio de archivos de forma independiente de los SO, da igual el SO, estariamos trabajando con una arquitectura cliente servidor y no tiene segurirdad pero
+              podemos añadirla con certiicados</p>
+              <p>	Ejemplos de servidore ftp: proftp,vsftp y filezilla
+                ejemplos de clientes: navegador, cliente modo texto(ftp), cliente grafico(filezilla, winstp, cyberduck).</p>
+            
+            <h2>--------Proftpd--------</h2>
+            <p>apt-get install proftpd</p>
+            <p>proftpd -v (version que tenemos de proftpd)</p>
+            <p>service proftpd status (estado del servidor)</p>
+
+            <h2>--------Permisos--------</h2>
+            <p>r: permite acceder a un archivo o listar un directorio</p>
+            <p>w: modificar y borrar</p>
+            <p>x: ejecutar</p>
+            <p>
+              El comando para visualizar los permisos es ls que nos permite listar el contenido del directorio actual.
+              modificadores de ls : ls -l(ver detallada la info), ls -a(incluir los ocultos), ls -R (aplicar de forma recursiva el comando).</p>
+              <p>Chmod: modifica los permisos</p>
+              <p>Chown: chown nombreUsuario nombreFichero.txt(lo que hace es asignar como propietario el indicado al fichero que hemos indicado).
+              </p>
+            <img src="./media/permisos.jpg" height="200" width="450">
+
+            <h1 id="ftp"><u>FTP</u></h1>
+            <h2>--------Tipos de usuarios--------</h2>
+            <p><strong>-Anónimos:</strong> Utilizan como nombre de usuario anonymous, acceden con permisos limitados, contraseña ej: email, si permitimos
+              en nuestro servidor este tipo de usuraios hay que tener en cuenta la brecha de seguridad. Se utilizan para que cualquiera
+              pueda acceder a los ficheros de forma publica.
+            </p>
+            <p><strong>-Autenticados o del sistema:</strong> Creados en el propio SO y tiene un nombre de usuario y contraseña propios.
+            </p>
+            <p><strong>-Virtuales:</strong> Usuarios creados especificamente para el servicio ftp,  tipo de usuario que crea una menor brecha de seguridad
+              la validacion del par nombre de usuario contraseña puede realizarse mediante fichero, bases de datos o mediante 
+              servicios de directorios ej: ldap</p>
+            
+              <h2>--------Tipos de ficheros--------</h2>
+              <p><strong>-Binarios:</strong> Su contenido es binario.</p>
+              <p><strong>-Texto:</strong> Caracteres legibles por humanos, activar el modo adecuado antes de trabajar con ficheros.</p>
+
+              <h2>--------Comandos FTP--------</h2>
+              <p>binary y ascii, nos indican con que tipo de ficheros vamos a trabajar.</p>
+
+              <h2>--------Modos de conexión en FTP--------</h2>
+              <p><strong>-Activo:</strong> Modo por defecto, el servidor abre los puertos 20 para datos y 21 para control
+                el cliente hace o mismo pero en puertos superirores al 1024
+                si vamos a subir un fichero al servidor la conexion la inicia el cliente, mientras si vamos a descargar un fichero
+                la conexion la inicia el servidor.</p>
+              <p><strong>-Pasivo:</strong> Es el cliente el que siempre inicia las conexiones, tanto la de datos como la de control
+                nos va a evitar problemas si existen cortafuegos intermedios
+              </p>
+
+              <h2>Errores FTP</h2>
+              <p><strong>-22x:</strong> Conexión correcta.</p>
+              <p><strong>-120:</strong> El servidor lee en xxx minutos.</p>
+              <p><strong>-331:</strong> Nombre de usuario correcto, necesita una contraseña.</p>
+              <p><strong>-550:</strong> Solicitud de información no aceptada. Las filas no están disponibles (ej.: filas incorrectas).</p>
+              <p>Se utiliza la ! para diferenciar entre los directorios remotos y los locales
+                formato url ftp --> ftp://< user>:< pass>@:< server>:< port></p>
+
+              <h2>--------Directivas FTP--------</h2>
+              <p><strong>-ServerName:</strong> Cambia el nombre del servidor.</p>
+              <p><strong>-ServerType:</strong> Es el modo en el que se configura el servidor, como servicio o como programa.</p>
+              <p><strong>-DefaultRoot:</strong> Establece la rura de la carpeta inicial de un usuario, con la birgulilla podemos enjaular al usuario para que no recorra el sistema de ficheros.</p>
+              <p><strong>-MaxClients:</strong> Numero maximo de clientes concectados a nuestro servidor.</p>
+              <p><strong>-UserAlias:</strong> Establece un alias a un usuario del sistema.</p>
+
+        </div>
+    </div>
+    <div id="Herranz" align="center">
+      <hr width="50%">
+      <a href="https://herranzz.github.io/dapw/" target="_blank" id="Herranz">Autor<strong>@Jorge-Herranz</strong></a>
+      <button><a href="#message">Volver arriba</a></button>
+  </div>
+  </body>
+</html>

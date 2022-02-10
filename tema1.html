@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Fuente encabezado-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!--Fuente botones-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"> 
+    
+    <title>DAWP</title>
+  </head>
+  <body>
+    <link href='CSS/style.css' rel='stylesheet' type='text/css'>
+
+    <div id="message" align="center"><button><a href="index.html">Inicio</a></button><strong>Tema-1-Arquitectura Web</strong></div>
+     
+    <div class="ima">
+        <img id="logo" src="./media/wiki.jpg" alt="wiki">
+      </div>
+
+    <div class="container">
+
+        <div class="menu">
+            <ul>
+                <a href="tema1.html" class="tema"><li>Tema-1-Arquitectura Web</li></a><br>
+                <ul>
+                    <a href="#dev"><li>DevOps</li></a><br>
+                    <a href="#ven"><li>Ventajas de la arquitectura cliente servidor</li></a><br>
+                    <a href="#des"><li>Desventajas de la arquitectura cliente servidor</li></a><br>
+                    <a href="#serv"><li>Servidor de aplicaciones web</li></a><br>
+                    <a href="#sg"><li>SGBD (Sistema Gestor de Base de Datos)</li></a><br>
+                    <a href="#clo"><li>Cloud Computing</li></a><br>
+                    <a href="#imp"><li>Implantación de servidores web</li></a>
+                </ul><br>
+
+                <a href="tema2.html" class="tema"><li>Tema-2-Servidores de Ficheros</li></a><br>
+                <a href="tema3.html" class="tema"><li>Tema-3-Herramientas colaborativas y Metodologías ágiles</li></a><br>
+                <a href="tema4.html" class="tema"><li>Tema-4-Documentación, pruebas y control de versiones</li></a>
+            </ul>
+        </div>
+
+        <div id="all" class="caja">
+            <h1 id="dev"><u>DevOps</u></h1>
+            <p>DevOps permite que los roles que antes estaban aislados (desarrollo, operaciones de TI, ingeniería de la calidad y seguridad) se coordinen y colaboren para producir productos mejores y más confiables.</p>
+            <h2>--------Fases--------</h2>
+            <p>-El plan</p>
+            <p>-Build</p>
+            <p>-Integración continua</p>
+            <p>-Despliegue</p>
+            <p>-Operación</p>
+            <p>-Feedback continuo</p>
+            <img src="./media/dev.png"><br>
+            
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/tFa-XJTh1hU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <h1 id="ven"><u>Ventajas de la arquitectura cliente servidor</u></h1>
+                <p>-Control centralizaqdo en el servidor, la configuracion y seguridad solo se realiza en el servidor.</p>
+                <p>-Se facilitan la escalabilidad.</p>
+                <p>-Facilitar el mantenimiento.</p>
+                <p>-No se duplican los datos.</p>
+                <p>-Bajo coste de los servicios.</p>
+
+            <h1 id="des"><u>Desventajas de la arquitectura cliente servidor</u></h1>
+            <p>-Dependemos del ancho de banda del cliente y el servidor.</p>
+            <p>-El servidor web tiene un numero limitado de conexiones.</p>
+            <p>-Es centralizado, porr lo que si falla el servidor es fatal.</p>
+            <p>-Gasto economico elevado en SW y HW especifico de servidores.</p>
+            <p>-El servidor nunca va a poder acceder a los recursos del cliente (cpu, impresora, hdd...).</p>
+
+            <h1 id="serv"><u>Servidor de aplicaciones web</u></h1>
+            <p>Es el SW que interpreta los lenguajes del lado servidor (php, java..)
+                Consulta servidores de bases de datos si en necesario y devuelve el resultado al servidor web.
+                Existe un servidor por cada tecnologia que usemos y se añaden como modulos del servidor web.</p>
+            
+            <h1 id="sg"><u>SGBD (Sistema Gestor de Base de Datos)</u></h1>
+            <p>Es un conjunto de programas que nos permiten gestionar bases de datos. Es decir, realiza las funciones de modificar, extraer y almacenar información de una base de datos, además de poseer herramientas con funciones de eliminar, modificar, analizar, etc…</p>
+
+            <h1 id="clo"><u>Cloud Computing</u></h1>
+            <img src="./media/cloud.jpg" width="400">
+            <h2>SaaS (software como servicio):</h2>
+            <p>Aplicacionesa que no requieren de instalacion completa en el equipo del usuario
+                imprescindible utilizar cliente para poder utilizarlas
+                ejemplo. twitter facebook...Destinado a usuarios finales</p>
+            
+            <h2>PaaS (Plataforma como servicio):</h2>
+            <p>Plataformas de desarrollo ofrecidas como servicio online integran todos los elementos 
+                necesarios para el desarrollo de aplicaciones.
+                ejemplo: google app engine, heroku, openshift.
+                los usuario de estos servicios pueden desarrollar ejecutar y administrar app sin preocuparles
+                la infraestructura que habrá por debajo.</p>
+
+            <h2>IaaS (La infraestructura como servicio):</h2>
+            <p>Servicios online que permiten virtualizar el HW y sistemas utilizados para montar plataformas
+                en ellas.
+                Ofrecen recursos fisicos y virtuales encargandose de proporcionar el HW necesario.
+                ejemplos: Amazon web services, Azure, Open Stack.</p>
+
+            <h2>CaaS (Los contenedores como servicio):</h2>
+            <p>Conceptos mas modernos en cloud computing ubucado entre la infraestructura y la plataforma.
+                Se utiliza para ofrecer contendores a demanda, estos nos ofrecen parte de la infraestructura 
+                y parte de la plataforma.
+                ejemplo. Docker</p>
+
+            <h2>FaaS (La función como servicio):</h2>
+            <p>permite la ejecución de aplicaciones a través de contenedores efímeros. Dichos contenedores 
+                se crean en el momento, de manera que el desarrollador no se ha de preocupar de la gestión de la infraestructura 
+                sobre la que se ejecuta su función, centrándose, por tanto, en la funcionalidad.
+                ejemplo. AWS Lambda, Google Cloud Functions, OpenFaaS.
+                </p>
+
+            <h1 id="imp"><u>Implantación de servidores web</u></h1>
+            <h2>Características:</h2>
+            <p>-Seguridad: (acceso, estructura, cifrado).</p>
+            <p>-Host virtuales: diferentes paginas/ sitios alojados en le servidor web.</p>
+            <p>-Modularización.</p>
+            <p>-Monitorización.</p>
+
+            <h2>--------Kali apache2--------</h2>
+            <p>sudo apt-get update</p>
+            <p>sudo apt-get install apache2</p>
+            <p>service apache2 status (estado servidor)</p>
+            <p>service apache2 start (arrancar el servidor)</p>
+            <p>ps -aux | grep "apache2" (procesos asociados a apache2)</p>
+            <p>namp -sT -0 localhost (escanear los puertos y saber si están lo puertos abiertos o cerrados)</p>
+            <p>Crear en /home carpeta /kali/web/www que tenga en su interior un index.html, ir a /etc/apache2
+ 
+                entrar en el fichero apache2.conf, ir hasta la parte de abajo (etiquetas directory) copiar y pegar debajo de /var/www</p>
+            <p>< Directory /home/kali/web/www>
+                Options Indexes FollowSymLinks
+                AllowOverride None
+                Require all granted
+            < /Directory></p>
+            <p>ir a /etc/apache2 duplicar el archivo
+                000-default.conf modificando el Documentroot y añadiendo /home/kali/web/www y cambiarle el puerto a 8080 (primera linea)</p>
+            <p>ir a la consola y deshabilitar con el comando a2dissite 000-default
+                reiniciar el servidor apache2 (systemctl reload apache2)
+                introducir a2ensite sitio.conf, añadir puerto 8080 en ports.conf
+                añadir Listen 8080
+                
+                buscar en un buscador localhost (muestra el servidor por defecto de apache2)
+                bucar en otra pestaña localhost:8080 (muestra el nuevo)</p>
+            
+                <h2>--------Directivas--------</h2>
+                <p><strong>-ServerRoot:</strong> ubicar el directorio raiz de instalacion</p>
+                <p><strong>-Timeout:</strong> tiempo máximo permitido antes de cerrar una conexion con el cliente.</p>
+                <p><strong>-KeepAlive:</strong> si las conexiones son persistentes o no.</p>
+                <p><strong>-MaxKeepAliveRequest:</strong> fijar el numero maximo de peticiones para las conexiones persistentes.</p>
+                <p><strong>-HostnameLookups:</strong> indicar el servidor DNS.</p>
+                <p><strong>-Include:</strong> incluir ficheros externos.
+                </p>
+                <p><strong>-ServerName: </strong> especifica el nombre y el puerto que el servidor utiliza para identificarse.</p>
+                <p><strong>-ServerAdmin:</strong> especifica la dirección de correo electrónico del administrador.</p>
+                <p><strong>-LogLevel:</strong> especifica el tipo de mensajes que se guardarán en el fichero de registro de errores.</p>
+                <p><strong>-AccessFileName:</strong> es el nombre del fichero de configuracion de acceso limitado que se buscará
+                    en cada uno de los directorios del servidor para conocer la configuracion del mismo.</p>
+                <p><strong>-IncludeOptional:</strong> permitir la inclusión de otros archivos de configuración adicionales si el o 
+                    los archivos indicados están disponibles.</p>
+        </div>
+
+    </div>
+    <div id="Herranz" align="center">
+        <hr width="50%">
+        <a href="https://herranzz.github.io/dapw/" target="_blank" id="Herranz">Autor<strong>@Jorge-Herranz</strong></a>
+        <button><a href="#message">Volver arriba</a></button>
+    </div>
+  </body>
+</html>
